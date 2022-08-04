@@ -7,8 +7,8 @@ import styles from './styles.module.css';
 
 // A list of songs: grabbed directly from catalog, but could use Zora API here.
 let songs = [
-    "https://catalog.mypinata.cloud/ipfs/QmbvUVdh5SiX5mRdMUR1s4Kg6eMfddbXYcJpf2spcNedEY", // DJ Planet Express - Weak
-    "https://catalog.mypinata.cloud/ipfs/QmVNy1g26zVfCQWPYsuSKhq2ie4f8S3WpM6EthSjtLcU1i", // allem iversom - "where it's warm"
+    "https://zora-prod.mypinata.cloud/ipfs/QmcY9FZCNeWVggwPm7dh34pexuu7AioLi77orSeJoXbRKF", // Kalisway - "bouncy ball"
+    "https://ipfs.io/ipfs/bafybeihjjjab5x4kf3t2ekp3r7i7szp4ylx5zecobiestqflmvji7r5wgq", // carter reeves - "alone time"
     "https://catalog.mypinata.cloud/ipfs/QmWWwDepZfDKqypi5DXzYzGk7tVCdpDaTPLFSysA3PBRrm", // Dutchyyy
 ];
 
@@ -41,28 +41,35 @@ function App() {
     // bottom right slider controls cross-fade between main & alternate
     return (
         <div className={styles["test-container"]}>
+          <br></br>
           <div>
-            BPM: {bpm}
+          -- 💓 --|  Beats per minute: {bpm}
           </div>
           <div>
-            Current Step: {currentStep}
+          -- 🎼 --|  Current Step: {currentStep}
           </div>
           <div>
-            Current Beat: {currentBeat}
+          -- 📶 --|  Current Beat: {currentBeat}
           </div>
           <div>
-            Song Progress: {Math.round(progress)}%
+          -- 🗣️ --| Artist 1: Kalisway -- | 💿 -- Track 1: bouncy ball 
           </div>
-          {isStuttering &&
+          <div>
+          -- 🗣️ --| Artist 2: Carter Reeves -- | 💿 -- Track 2: alone time 
+          </div>
+          <div>
+          -- 🎛️ --| Remix is {Math.round(progress)}% over
+          </div>
+          {/* {isStuttering &&
            <div>
              Stuttering at 1/{stutterRate} rate
-           </div>}
+           </div>} */}
           <SporeEmbed
             main={main} // url to main track (can be switched w/o interrupting)
             alternate={alternate} // url to alternate track (can be switched w/o interrupting)
             juiceSamples={juiceSamples} // list of URLs to samples
-            backgroundColor="black" // background color of Spore itselft
-            color="blue" // color of waveform below
+            backgroundColor="orange" // background color of Spore itselft
+            color="" // color of waveform below
             skin={skin} // URL to image to be morphed on skin
           />
         </div>

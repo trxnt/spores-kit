@@ -1,2 +1,19 @@
+video#bgVideo {
+    position: absolute; // Play the video in full screen mode
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; // Put the video behind all other elements
+   }
+   
+   @media only screen and (max-width: 768px) {
+    video {
+      display:none;
+    }
+    body{
+      background-image:url(“image.png”);
+    }
+   }
 .test-container {
 }
